@@ -1,12 +1,15 @@
 import React, { useContext } from "react";
-import profile from "../mock_data/profile-json";
 import { ThemeContext } from "../context/ThemeContext";
 import "../style/bar-link.css";
 
 export default function BarLink({ children, img }) {
   // todo: implement link animations
+
+  const { btnColor, btnTextColor } = useContext(ThemeContext);
+  const style = { background: btnColor, color: btnTextColor };
+
   return (
-    <a href="#" className="link">
+    <a href="#" className="link" style={style}>
       <img src={img} />
       <p>{children}</p>⋮ {/* implement link options */}
     </a>

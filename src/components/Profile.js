@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import profile from "../mock_data/profile-json";
 import "../style/profile.css";
 
@@ -8,12 +8,11 @@ import SOCIALS from "./socials";
 
 import BarLink from "./Bar-Link";
 import SquareLink from "./Square-Link";
+import CustomizePage from "./Customize-Page";
 
 export default function Profile() {
-  const { pageColor } = useContext(ThemeContext);
-  const style = { background: pageColor };
-
   const { pfp, username, bio, groupLinks, socials } = profile;
+  const { pageColor } = useContext(ThemeContext);
 
   const renderLinks = (layout, links) => {
     // todo: make bar and square into constants
@@ -28,8 +27,18 @@ export default function Profile() {
     });
   };
 
+  const renderSocials = () =>
+    socials.map((social, index) => {
+      const { name, url } = social;
+      return (
+        <a key={index} href={url} title={`link to ${name}`}>
+          <img src={SOCIALS[name]} />
+        </a>
+      );
+    });
+
   return (
-    <div className="profile" style={style}>
+    <div className="profile" style={{ background: pageColor }}>
       <img className="pfp" src={pfp} alt="profile picture" />
       <h2>{username}</h2>
       <h3>{bio}</h3>
@@ -42,14 +51,8 @@ export default function Profile() {
           </section>
         );
       })}
-      {socials.map((social, index) => {
-        const { name, url } = social;
-        return (
-          <a key={index} href={url} title={`link to ${name}`}>
-            <img src={SOCIALS[name]} />
-          </a>
-        );
-      })}
+      <section>{renderSocials()}</section>
+      <CustomizePage />
     </div>
   );
 }

@@ -4,8 +4,8 @@ import { COLORS } from "../constants/colors";
 const ThemeContext = createContext();
 
 const ThemeProvider = ({ children }) => {
-  const [btnColor, setBtnColor] = useState(COLORS.BLUE);
-  const [btnTextColor, setBtnTextColor] = useState(COLORS.PLUM);
+  const [btnColor, setBtnColor] = useState(COLORS.LAVENDER);
+  const [btnTextColor, setBtnTextColor] = useState(COLORS.BLACK);
   const [pageColor, setPageColor] = useState(COLORS.LAVENDER);
 
   return (
