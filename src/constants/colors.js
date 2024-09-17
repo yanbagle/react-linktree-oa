@@ -1,5 +1,5 @@
 export const COLORS = {
-  GREEN: "GREEN",
-  BLUE: "BLUE",
-  RED: "RED",
+  BLUE: "#B0C4DE",
+  PLUM: "#DDA0DD",
+  LAVENDER: "#D8BFD8",
 };

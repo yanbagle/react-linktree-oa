@@ -4,10 +4,9 @@ import { COLORS } from "../constants/colors";
 const ThemeContext = createContext();
 
 const ThemeProvider = ({ children }) => {
-  const [btnColor, setBtnColor] = useState(COLORS.GREEN);
-  const [btnTextColor, setBtnTextColor] = useState(COLORS.GREEN);
-  const [pageColor, setPageColor] = useState(COLORS.RED);
-  const [btnStyles, setBtnStyles] = useState(COLORS.GREEN);
+  const [btnColor, setBtnColor] = useState(COLORS.BLUE);
+  const [btnTextColor, setBtnTextColor] = useState(COLORS.PLUM);
+  const [pageColor, setPageColor] = useState(COLORS.LAVENDER);
 
   return (
     <ThemeContext.Provider
@@ -18,8 +17,6 @@ const ThemeProvider = ({ children }) => {
         setBtnTextColor,
         pageColor,
         setPageColor,
-        btnStyles,
-        setBtnStyles,
       }}
     >
       {children}
