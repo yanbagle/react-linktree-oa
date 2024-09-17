@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import profile from "../mock_data/profile-json";
 import "../style/profile.css";
 
